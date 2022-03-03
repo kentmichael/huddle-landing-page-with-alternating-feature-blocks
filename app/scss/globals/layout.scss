@@ -1,0 +1,35 @@
+@use '../util' as *;
+
+.container {
+	max-width: rem(1440);
+	margin-left: auto;
+  margin-right: auto;
+
+  &-sm {
+    padding: 0 rem(16);
+
+    @include breakpoint(medium) {
+      padding: 0 rem(50);
+    }
+
+    @include breakpoint(large) {
+      padding: 0 rem(76);
+    }
+  }
+
+  &-md {
+    padding: 0 rem(20);
+
+    @include breakpoint(medium) {
+      padding: 0 rem(50);
+    }
+
+    @include breakpoint(large) {
+      padding: 0 rem(100);
+    }
+  }
+
+  &-lg {
+    padding: 0 rem(56);
+  }
+}

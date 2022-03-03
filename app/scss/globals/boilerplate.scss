@@ -1,0 +1,41 @@
+@use '../util' as *;
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--vy-dk-cyan);
+  font-family: var(--font-body);
+  font-size: rem(18);
+  font-weight: 400;
+}
+
+header {
+  background-color: var(--vy-dale-cyan);
+  background-image: url('../images/bg-hero-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  margin-bottom: rem(58);
+
+  @include breakpoint(large) {
+    background-image: url('../images/bg-hero-desktop.svg');
+    margin-bottom: rem(154);
+  }
+}
+
+main {
+  display: grid;
+  gap: rem(40);
+  margin-bottom: rem(239);
+}

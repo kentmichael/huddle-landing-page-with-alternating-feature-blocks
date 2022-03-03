@@ -1,0 +1,148 @@
+@use '../util' as *;
+
+footer {
+  background-color: var(--vy-dk-cyan);
+}
+
+.footer {
+  padding-top: rem(138);
+  padding-bottom: rem(47);
+  position: relative;
+
+  &-build {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: rem(15);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 90%;
+    max-width: rem(800);
+    transform: translate(-50%, 50%);
+    border-radius: rem(10);
+    box-shadow: 0 rem(2) rem(10) hsl(0, 0%, 29%);
+    padding: rem(20) 0;
+    background-color: var(--white);
+    text-align: center;
+
+    @include breakpoint(medium) {
+      gap: rem(38);
+      height: rem(280);
+    }
+
+    span {
+      display: block;
+      font-size: rem(27);
+      font-family: var(--font-heading);
+      font-weight: 600;
+
+      @include breakpoint(medium) {
+        font-size: rem(36);
+      }
+    }
+
+    a {
+      display: inline-block;
+      border-radius: rem(100);
+      padding: rem(16) rem(20);
+      color: var(--white);
+      background-color: var(--pink);
+      font-weight: 700;
+      font-size: rem(14);
+      transition: all 300ms ease-in;
+
+      @include breakpoint(medium) {
+        font-size: rem(18);
+        padding: rem(25) rem(100);
+      }
+
+      &:hover {
+        color: var(--pink);
+        background-color: var(--black);
+      }
+    }
+  }
+
+  &-logo {
+    display: inline-block;
+    margin-bottom: rem(28);
+    
+    img {
+      width: rem(168);
+      height: rem(28);
+
+      @include breakpoint(large) {
+        width: rem(245);
+        height: rem(40);
+      }
+    }
+  }
+
+  &-copyright {
+    color: var(--white);
+    font-size: rem(13);
+    text-align: center;
+
+    @include breakpoint(large) {
+      font-size: rem(15);
+      text-align: right;
+    }
+  }
+}
+
+.info {
+  color: var(--white);
+  font-size: 1rem;
+
+  &__contact {
+    margin-bottom: rem(62);
+    font-size: rem(20);
+
+    > *:not(:last-child) {
+      margin-bottom: rem(28);
+    }
+
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: rem(25);
+    }
+
+    &--loc {
+      color: var(--white);
+      align-self: flex-start;
+    }
+
+    &--loc ~ span {
+      color: var(--white);
+      align-self: flex-start;
+    }
+
+    &--num {
+      color: var(--white);
+    }
+
+    &--email {
+      color: var(--white);
+    }
+  }
+
+  &__links {
+    margin-top: 0;
+    margin-bottom: rem(57);
+    padding: 0;
+    list-style-type: none;
+    font-size: rem(18);
+
+    > *:not(:last-child) {
+      margin-bottom: rem(28);
+    }
+  }
+
+  &__socmed {
+
+  }
+}

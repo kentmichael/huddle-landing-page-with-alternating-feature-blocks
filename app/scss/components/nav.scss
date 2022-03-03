@@ -1,0 +1,58 @@
+@use '../util' as *;
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: rem(60);
+  padding-top: rem(24);
+  padding-bottom: rem(24);
+
+  @include breakpoint(medium) {
+    padding-top: rem(36);
+    padding-bottom: rem(36);
+  }
+
+  @include breakpoint(large) {
+    margin-bottom: rem(18);
+    padding-top: rem(48);
+    padding-bottom: rem(48);
+  }
+
+  &__logo {
+    display: inline-block;
+
+    img {
+      width: rem(106);
+      height: rem(18);
+      transition: all 250ms ease-in;
+
+      @include breakpoint(medium) {
+        width: rem(203);
+        height: rem(32);
+      }
+    }
+  }
+
+  &__cta {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--vy-dk-cyan);
+    border-radius: rem(50);
+    padding: rem(7) rem(23);
+    box-shadow: 0 rem(2) rem(10) hsl(208, 11%, 90%);
+    font-size: rem(11);
+    font-weight: 700;
+    transition: all 250ms ease-in;
+
+    @include breakpoint(medium) {
+      padding: rem(15.2) rem(68.2);
+      font-size: rem(13);
+    }
+
+    &:hover {
+      color: var(--white);
+      background-color: var(--pink);
+    }
+  }
+}
