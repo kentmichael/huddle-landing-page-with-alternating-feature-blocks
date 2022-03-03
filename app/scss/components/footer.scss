@@ -9,58 +9,51 @@ footer {
   padding-bottom: rem(47);
   position: relative;
 
+  @include breakpoint(medium) {
+    padding-top: rem(190);
+  }
+
   &-build {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: rem(15);
     position: absolute;
     bottom: 100%;
     left: 50%;
     width: 90%;
     max-width: rem(800);
     transform: translate(-50%, 50%);
-    border-radius: rem(10);
-    box-shadow: 0 rem(2) rem(10) hsl(0, 0%, 29%);
-    padding: rem(20) 0;
+    border-radius: rem(15);
+    box-shadow: 0 rem(1) rem(5) hsl(0, 0%, 18%);
+    padding: rem(46) 0;
     background-color: var(--white);
     text-align: center;
 
-    @include breakpoint(medium) {
-      gap: rem(38);
-      height: rem(280);
-    }
-
-    span {
-      display: block;
-      font-size: rem(27);
+    p {
+      margin-bottom: rem(25);
       font-family: var(--font-heading);
       font-weight: 600;
 
       @include breakpoint(medium) {
-        font-size: rem(36);
+        margin-bottom: rem(39);
+        font-size: rem(32);
       }
     }
 
     a {
       display: inline-block;
       border-radius: rem(100);
-      padding: rem(16) rem(20);
+      padding: rem(11) rem(51);
       color: var(--white);
       background-color: var(--pink);
       font-weight: 700;
-      font-size: rem(14);
-      transition: all 300ms ease-in;
+      font-size: rem(10);
+      transition: opacity 300ms ease-in;
 
       @include breakpoint(medium) {
-        font-size: rem(18);
-        padding: rem(25) rem(100);
+        font-size: rem(16);
+        padding: rem(29) rem(120);
       }
 
       &:hover {
-        color: var(--pink);
-        background-color: var(--black);
+        opacity: .7;
       }
     }
   }
@@ -93,22 +86,34 @@ footer {
 }
 
 .info {
+  display: grid;
+  gap: rem(55);
   color: var(--white);
   font-size: 1rem;
 
-  &__contact {
-    margin-bottom: rem(62);
-    font-size: rem(20);
+  @include breakpoint(large) {
+    grid-template-columns: 1fr 1fr .5fr;
+  }
 
-    > *:not(:last-child) {
-      margin-bottom: rem(28);
-    }
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    gap: rem(28);
+    font-size: rem(20);
 
     div {
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: rem(25);
+
+      a {
+        transition: color 200ms ease-in;
+
+        &:hover {
+          color: var(--pink);
+        }
+      }
     }
 
     &--loc {
@@ -131,18 +136,85 @@ footer {
   }
 
   &__links {
-    margin-top: 0;
-    margin-bottom: rem(57);
+    display: grid;
+    gap: rem(28);
+    margin: 0;
     padding: 0;
     list-style-type: none;
     font-size: rem(18);
 
-    > *:not(:last-child) {
-      margin-bottom: rem(28);
+    a {
+      color: var(--white);
+      transition: text-decoration 300ms ease-in;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    @include breakpoint(large) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: max-content;
+      gap: rem(24);
+
+      &--us {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      &--we {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+
+      &--faq {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+      }
+
+      &--career {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+
+      &--blog {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+
+      &--contact {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+      }
     }
   }
 
   &__socmed {
+    display: flex;
+    justify-content: center;
+    gap: rem(12);
+    margin-bottom: rem(25);
 
+    @include breakpoint(large) {
+      justify-content: flex-start;
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: rem(1) solid var(--white);
+      border-radius: 50%;
+      width: rem(33);
+      height: rem(33);
+      color: var(--white);
+      font-size: rem(18);
+      transition: all 200ms ease-in;
+
+      &:hover {
+        border-color: var(--pink);
+        color: var(--pink);
+      }
+    }
   }
 }

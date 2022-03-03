@@ -4,7 +4,7 @@
   display: grid;
   gap: rem(39);
   padding: rem(50) rem(38) rem(38);
-  box-shadow: 0 rem(5) rem(15) hsl(0, 0%, 90%);
+  box-shadow: 0 rem(3) rem(15) hsl(0, 0%, 80%);
   border-radius: rem(20);
 
   @include breakpoint(medium) {
